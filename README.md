@@ -4,7 +4,7 @@ Trabalho final desenvolvido para o curso **"Métodos Numéricos: Introdução Do
 
 ## Tecnologias e Métodos Numéricos
 
-O software resolve o balanço de massa e energia do ciclo utilizando:
+O código resolve o balanço de massa e energia do ciclo utilizando:
 * **Newton-Raphson:** Solver principal para sistemas de equações não-lineares.
 * **Eliminação de Gauss:** Resolução do sistema linear a cada iteração.
 * **Diferenças Finitas:** Aproximação da Matriz Jacobiana de sensibilidade.
@@ -24,7 +24,9 @@ No início do código, é necessário selecionar o perfil de operação desejado
 Para verificar como o sistema reage a diferentes condições (análise de sensibilidade), o usuário pode modificar as variáveis de contorno diretamente no arquivo fonte:
 * **Q (Carga Térmica):** Altera a demanda de resfriamento inicial.
 * **Te (Temperatura de Evaporação):** Define a temperatura no trocador de calor interno.
-* **Tc (Temperatura de Condensação):** Define a temperatura de rejeição de calor externa.
+* * **Parâmetros de Monte Carlo:** Ajuste da amplitude do desvio padrão para simular a intensidade do "susto" térmico no sistema.
+
+**Nota:** O valor de **Tc (Temperatura de Condensação)** e a vazão mássica são calculados iterativamente pelo solver, adaptando-se às variações estocásticas impostas durante as 20 iterações.
 
 > **Nota:** A mudança nestes parâmetros impactará diretamente o cálculo da vazão mássica ($x_4$) e o deslocamento final do compressor.
 
