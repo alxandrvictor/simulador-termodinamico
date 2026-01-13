@@ -24,7 +24,7 @@ No início do código, é necessário selecionar o perfil de operação desejado
 Para verificar como o sistema reage a diferentes condições (análise de sensibilidade), o usuário pode modificar as variáveis de contorno diretamente no arquivo fonte:
 * **Q (Carga Térmica):** Altera a demanda de resfriamento inicial.
 * **Te (Temperatura de Evaporação):** Define a temperatura no trocador de calor interno.
-* * **Parâmetros de Monte Carlo:** Ajuste da amplitude do desvio padrão para simular a intensidade do "susto" térmico no sistema.
+* **Parâmetros de Monte Carlo:** Ajuste da amplitude do desvio padrão para simular a intensidade do "susto" térmico no sistema.
 
 **Nota:** O valor de **Tc (Temperatura de Condensação)** e a vazão mássica são calculados iterativamente pelo solver, adaptando-se às variações estocásticas impostas durante as 20 iterações.
 
