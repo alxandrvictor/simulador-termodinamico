@@ -1,6 +1,6 @@
 # Simulador Termodinâmico desenvolvido em **Fortran 90/95** para o cálculo e dimensionamento de sistemas de refrigeração por compressão de vapor. 
 
-Trabalho final desenvolvido para o curso **"Métodos Numéricos: Introdução Do Cálculo à Simulação Numérica"**, ministrado pelo **Prof. Dr. Rafael Gabler Gontijo** (L2C / Canal Ciência e Brisa).
+Trabalho final desenvolvido para o curso **"Do Cálculo a Simulação Computacional: Fundamentos de Métodos Numéricos com Aplicações"**, ministrado pelo **Prof. Dr. Rafael Gabler Gontijo** (L2C / Canal Ciência e Brisa).
 
 ## Tecnologias e Métodos Numéricos
 
