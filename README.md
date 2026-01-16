@@ -17,9 +17,10 @@ O simulador é versátil e permite a análise de diferentes cenários. Para obte
 
 ### 1. Escolha do Caso (Fluido)
 No início do código, é necessário selecionar o perfil de operação desejado:
-* **Perfil Doméstico:** Utiliza o fluido **R134a**, típico de geladeiras residenciais.
-* **Perfil Comercial:** Utiliza o fluido **R404A**, voltado para balcões frigoríficos e câmaras frias.
-
+* **Perfil Doméstico:** Utilizando o fluido **R134a**, típico de geladeiras residenciais.
+* **Perfil Comercial:** Utilizando o fluido **R404A**, voltado para balcões frigoríficos e câmaras frias.
+* **Perfil Comercial:** Utilizando o fluido **R134a**, também voltado para balcões frigoríficos e câmaras frias, mas com propriedades termodinâmicas diferentes.
+* 
 ### 2. Alteração de Variáveis de Entrada
 Para verificar como o sistema reage a diferentes condições (análise de sensibilidade), o usuário pode modificar as variáveis de contorno diretamente no arquivo fonte:
 * **Q (Carga Térmica):** Altera a demanda de resfriamento inicial.
