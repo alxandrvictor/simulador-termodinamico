@@ -20,7 +20,7 @@ No início do código, é necessário selecionar o perfil de operação desejado
 * **Perfil Doméstico:** Utilizando o fluido **R134a**, típico de geladeiras residenciais.
 * **Perfil Comercial:** Utilizando o fluido **R404A**, voltado para balcões frigoríficos e câmaras frias.
 * **Perfil Comercial:** Utilizando o fluido **R134a**, também voltado para balcões frigoríficos e câmaras frias, mas com propriedades termodinâmicas diferentes.
-* 
+
 ### 2. Alteração de Variáveis no Código-Fonte
 Para modificar as condições de contorno de engenharia, localize o bloco `! --- 2. CONFIGURAÇÃO INICIAL ---` no arquivo `simulador_termodinamico.f90`:
 
@@ -35,7 +35,7 @@ Para modificar as condições de contorno de engenharia, localize o bloco `! ---
 
 ---
 
-## 📊 Análise de Resultados
+## Análise de Resultados
 
 O simulador entrega uma saída detalhada que permite validar o dimensionamento do sistema:
 
@@ -46,12 +46,21 @@ O simulador entrega uma saída detalhada que permite validar o dimensionamento d
 
 > **Nota:** A mudança nestes parâmetros impactará diretamente o cálculo da vazão mássica ($x_4$) e o deslocamento final do compressor.
 
+## Exportação de Dados
+
+O simulador não apenas exibe os dados no terminal, mas também gera automaticamente um arquivo para análise externa:
+
+* **Arquivo:** `resultado_simulacao.csv`
+* **Conteúdo:** Série temporal contendo Passo, Carga Térmica, Temperatura de Condensação ($T_c$), Vazão Mássica, COP, Potência Consumida, Pressões e Eficiência de 2ª Lei.
+
+Este arquivo é formatado para ser importado diretamente em ferramentas como **Excel, Origin ou Python (Pandas)**, permitindo a plotagem de curvas de convergência e análise de sensibilidade dos dados gerados pelo método de Monte Carlo.
+
 ## Como Executar
 
 1. **Configuração:** Abra o arquivo `.f90` e ajuste as variáveis de entrada e o fluido desejado.
 2. **Compilação:** Certifique-se de ter o `gfortran` instalado.
    ```bash
-   gfortran -o simulador main.f90
+   gfortran -o simulador_termodinamico.f90
 
 ## Análise de Resultados
 
