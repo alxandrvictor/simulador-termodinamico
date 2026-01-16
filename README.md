@@ -21,13 +21,28 @@ No início do código, é necessário selecionar o perfil de operação desejado
 * **Perfil Comercial:** Utilizando o fluido **R404A**, voltado para balcões frigoríficos e câmaras frias.
 * **Perfil Comercial:** Utilizando o fluido **R134a**, também voltado para balcões frigoríficos e câmaras frias, mas com propriedades termodinâmicas diferentes.
 * 
-### 2. Alteração de Variáveis de Entrada
-Para verificar como o sistema reage a diferentes condições (análise de sensibilidade), o usuário pode modificar as variáveis de contorno diretamente no arquivo fonte:
-* **Q (Carga Térmica):** Altera a demanda de resfriamento inicial.
-* **Te (Temperatura de Evaporação):** Define a temperatura no trocador de calor interno.
-* **Parâmetros de Monte Carlo:** Ajuste da amplitude do desvio padrão para simular a intensidade do "susto" térmico no sistema.
+### 2. Alteração de Variáveis no Código-Fonte
+Para modificar as condições de contorno de engenharia, localize o bloco `! --- 2. CONFIGURAÇÃO INICIAL ---` no arquivo `simulador_termodinamico.f90`:
 
-**Nota:** O valor de **Tc (Temperatura de Condensação)** e a vazão mássica são calculados iterativamente pelo solver, adaptando-se às variações estocásticas impostas durante as 20 iterações.
+| Variável | Função | Localização |
+| :--- | :--- | :--- |
+| `Te` | Temperatura de Evaporação ($^\circ C$) | Dentro do `select case` do perfil |
+| `Q_base` | Carga Térmica nominal ($kW$) | Define a capacidade do sistema |
+| `n_is` | Eficiência Isentrópica | Modelagem real do compressor |
+| `tempo_total` | Número de passos da simulação | No loop principal de tempo |
+
+> **Nota:** Para ajustar a intensidade da simulação de Monte Carlo, modifique os multiplicadores de `Q_atual` no bloco `! --- 5. LOOP PRINCIPAL ---`.
+
+---
+
+## 📊 Análise de Resultados
+
+O simulador entrega uma saída detalhada que permite validar o dimensionamento do sistema:
+
+1.  **Convergência Numérica:** Monitoramento do erro residual e estabilidade da Jacobiana.
+2.  **Certificação Energética:** Classificação do sistema (Classe A a D) baseada na **Eficiência de 2ª Lei (Exergética)**.
+3.  **Dimensionamento de Hardware:** Cálculo do deslocamento volumétrico médio ($cm^3/rev$) para seleção de compressores reais (Ex: Embraco, Bitzer).
+4.  **Análise Econômica:** Estimativa de custo mensal baseada em tarifas de energia configuráveis.
 
 > **Nota:** A mudança nestes parâmetros impactará diretamente o cálculo da vazão mássica ($x_4$) e o deslocamento final do compressor.
 
