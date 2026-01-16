@@ -1,4 +1,4 @@
-# Este projeto consiste em um simulador termodinâmico desenvolvido em **Fortran 90/95** para o cálculo e dimensionamento de sistemas de refrigeração por compressão de vapor. 
+# Simulador Termodinâmico desenvolvido em **Fortran 90/95** para o cálculo e dimensionamento de sistemas de refrigeração por compressão de vapor. 
 
 Trabalho final desenvolvido para o curso **"Métodos Numéricos: Introdução Do Cálculo à Simulação Numérica"**, ministrado pelo **Prof. Dr. Rafael Gabler Gontijo** (L2C / Canal Ciência e Brisa).
 
